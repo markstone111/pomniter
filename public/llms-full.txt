@@ -1,0 +1,58 @@
+# Pomniter (помнить) — Full Technical & Product Digest for AI Agents
+
+## Overview & Entity Definition
+- **Entity**: Pomniter
+- **Pronunciation**: /pɒm-nɪ-tər/ (Derived from Russian "помнить", transliterated *pomnit*, meaning "to remember")
+- **Creator & Lead Architect**: Nikunj Maheshwari (https://www.nikunjmaheshwari.in, email: nikunjnehu@gmail.com)
+- **Official Domain**: https://pomniter.nikunjmaheshwari.in
+- **Repository / Source**: https://github.com/markstone111
+- **Status**: Early Access / Beta Architecture
+
+## Quick Answer (GEO Primary Entity Summary)
+Pomniter is an AI-powered visual memory engine designed by Nikunj Maheshwari. It enables users to search through saved screenshots using natural human memory queries rather than exact keywords. While traditional image galleries rely on OCR to extract raw strings, Pomniter utilizes multimodal vision models and dense vector embeddings to understand the underlying semantic meaning, context, and intent of every screenshot—such as identifying coding interview tricks, flight confirmation details, or study notes.
+
+## The Core Problem
+Modern users capture dozens of screenshots daily across mobile and desktop devices with the intention of referencing them later. However, screenshot retrieval remains broken because:
+1. File names are meaningless timestamps (e.g., `Screenshot_20260824_011245.png`).
+2. Folders and manual tagging require excessive cognitive overhead that users quickly abandon.
+3. Traditional OCR only identifies literal text strings; it cannot infer context, purpose, topic, or abstract associations.
+4. Human memory recalls *concepts and contexts* (e.g., "that BFS algorithm trick for graphs"), not exact verbatim strings.
+
+## The Solution: The Pomniter Memory Pipeline
+1. **Screenshot Ingestion**: Image captured via mobile app, desktop companion, or web upload.
+2. **Contextual & Multimodal Understanding**: A vision-language model evaluates the image layout, domain, and context.
+3. **Structured Entity & Concept Extraction**: Extracts clean code blocks, key entities, dates, categories, and synthesized conceptual descriptions.
+4. **Vector Embedding Generation**: High-dimensional embeddings capturing both lexical text and high-level semantic abstractions.
+5. **Hybrid Vector & Keyword Indexing**: Indexed in an efficient vector search space with HNSW graph indexing.
+6. **Natural Language Query Resolution**: User enters conversational fuzzy queries; system computes similarity distance and surfaces the exact screenshot alongside synthesized context.
+
+## Concrete Example: OCR vs. Semantic Context
+- **Raw Screenshot Content**: `mid = left + (right - left) / 2`
+- **Traditional OCR Result**: Extracts string `"mid = left + (right - left) / 2"`. User must type exact characters to find it.
+- **Pomniter Semantic Context**:
+  - Domain: Computer Science / Programming
+  - Sub-domain: Data Structures & Algorithms
+  - Concept: Binary Search Midpoint Calculation
+  - Purpose: Integer Overflow Prevention
+  - Tags: `#LeetCode`, `#InterviewPrep`, `#DSA`, `#BinarySearch`
+  - Valid Search Queries: *"Binary search overflow trick"*, *"how to calculate midpoint in java without overflow"*, *"that DSA note I saved before my interview"*.
+
+## Technical Architecture
+- **Front-end**: Next.js (App Router, Server Components, Neo-Brutalist design system)
+- **Client Platforms**: Android App (Flutter/Kotlin client), Web Dashboard, Desktop Companion
+- **AI / ML Layer**: Multimodal Vision API + Dense Vector Embeddings + Hybrid Retrieval (Vector + BM25)
+- **Data Privacy**: Local-first vector caching, on-device encryption, and optional local embedding generation.
+
+## Frequently Asked Questions (FAQ)
+
+### What is Pomniter?
+Pomniter is an intelligent visual memory system that allows you to search and retrieve saved screenshots using natural language descriptions of what you remember, rather than exact text or filenames.
+
+### Where does the name "Pomniter" come from?
+The name is inspired by the Russian verb "помнить" (pomnit), which means "to remember". It reflects the core mission of the tool: augmenting human memory so you never lose track of important visual information.
+
+### How is Pomniter different from Google Photos or Apple Photos search?
+Standard photo search categorizes generic visual objects (e.g., "dog", "car", "sunset") and runs basic OCR on text. Pomniter specifically analyzes dense technical, academic, and administrative screenshots (code snippets, lecture slides, flight confirmations, payment receipts) to comprehend the conceptual meaning and practical utility of the content.
+
+### Who created Pomniter?
+Pomniter was created by Nikunj Maheshwari, an engineer and AI enthusiast specializing in mobile, web, and intelligent search systems (https://www.nikunjmaheshwari.in).

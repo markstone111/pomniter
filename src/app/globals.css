@@ -1,0 +1,284 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;700;900&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap');
+
+:root {
+  /* Neo-Brutalist Light Mode Palette */
+  --bg-main: #f5f2eb;
+  --bg-surface: #ffffff;
+  --bg-card: #ffffff;
+  --bg-card-hover: #faf8f5;
+  --text-main: #121212;
+  --text-muted: #4a4a4a;
+  --text-dim: #717171;
+  --border-color: #121212;
+  --border-width: 2.5px;
+  --border-thick: 3.5px;
+  --shadow-color: #121212;
+  --shadow-sm: 3px 3px 0px var(--shadow-color);
+  --shadow-md: 5px 5px 0px var(--shadow-color);
+  --shadow-lg: 8px 8px 0px var(--shadow-color);
+  --shadow-xl: 12px 12px 0px var(--shadow-color);
+
+  /* Neo-Brutalist Accent Tokens */
+  --accent-green: #00e575;
+  --accent-green-hover: #00cc66;
+  --accent-yellow: #ffe600;
+  --accent-yellow-hover: #ffd700;
+  --accent-pink: #ff85c0;
+  --accent-purple: #c4b5fd;
+  --accent-blue: #70b8ff;
+  --accent-peach: #fed7aa;
+  --accent-lavender: #e9d5ff;
+  --accent-cyan: #67e8f9;
+
+  /* Font Families */
+  --font-display: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+
+  /* Grid & Pattern */
+  --grid-color: rgba(18, 18, 18, 0.06);
+}
+
+[data-theme='dark'] {
+  /* Neo-Brutalist Dark Mode Palette */
+  --bg-main: #0e0e10;
+  --bg-surface: #17171c;
+  --bg-card: #1c1c24;
+  --bg-card-hover: #23232e;
+  --text-main: #f5f2eb;
+  --text-muted: #b5b5c0;
+  --text-dim: #828290;
+  --border-color: #f5f2eb;
+  --shadow-color: #f5f2eb;
+  --shadow-sm: 3px 3px 0px var(--shadow-color);
+  --shadow-md: 5px 5px 0px var(--shadow-color);
+  --shadow-lg: 8px 8px 0px var(--shadow-color);
+  --shadow-xl: 12px 12px 0px var(--shadow-color);
+
+  /* Dark mode accent adjustments */
+  --accent-green: #00ff84;
+  --accent-yellow: #ffea2b;
+  --accent-pink: #ff70b8;
+  --accent-purple: #a78bfa;
+  --accent-blue: #60a5fa;
+  --accent-peach: #fb923c;
+  --accent-lavender: #c084fc;
+  --accent-cyan: #22d3ee;
+
+  --grid-color: rgba(245, 242, 235, 0.05);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-body);
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--bg-main);
+  background-image: radial-gradient(var(--grid-color) 1.5px, transparent 1.5px);
+  background-size: 24px 24px;
+  color: var(--text-main);
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Typography Defaults */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: var(--text-main);
+}
+
+p {
+  line-height: 1.65;
+  color: var(--text-muted);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+code, pre, .mono {
+  font-family: var(--font-mono);
+}
+
+/* Neo-Brutalist Utilities */
+.neo-box {
+  background: var(--bg-card);
+  border: var(--border-width) solid var(--border-color);
+  box-shadow: var(--shadow-md);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.neo-box:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.neo-box-static {
+  background: var(--bg-card);
+  border: var(--border-width) solid var(--border-color);
+  box-shadow: var(--shadow-md);
+}
+
+.neo-box-inset {
+  background: var(--bg-surface);
+  border: var(--border-width) solid var(--border-color);
+  box-shadow: inset 3px 3px 0px rgba(0, 0, 0, 0.2);
+}
+
+.neo-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.92rem;
+  padding: 12px 22px;
+  border: var(--border-width) solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  background: var(--accent-green);
+  color: #121212;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  transition: transform 0.1s ease, box-shadow 0.1s ease, background-color 0.15s ease;
+  user-select: none;
+}
+
+.neo-btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-md);
+  background: var(--accent-green-hover);
+}
+
+.neo-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px var(--shadow-color);
+}
+
+.neo-btn-yellow {
+  background: var(--accent-yellow);
+}
+.neo-btn-yellow:hover {
+  background: var(--accent-yellow-hover);
+}
+
+.neo-btn-pink {
+  background: var(--accent-pink);
+}
+
+.neo-btn-purple {
+  background: var(--accent-purple);
+}
+
+.neo-btn-outline {
+  background: var(--bg-surface);
+  color: var(--text-main);
+}
+.neo-btn-outline:hover {
+  background: var(--bg-card-hover);
+}
+
+.neo-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 4px 10px;
+  border: var(--border-width) solid var(--border-color);
+  box-shadow: 2px 2px 0px var(--shadow-color);
+  background: var(--accent-yellow);
+  color: #121212;
+  width: fit-content;
+}
+
+.neo-badge-green {
+  background: var(--accent-green);
+}
+
+.neo-badge-pink {
+  background: var(--accent-pink);
+}
+
+.neo-badge-blue {
+  background: var(--accent-blue);
+}
+
+.neo-badge-purple {
+  background: var(--accent-purple);
+}
+
+/* Layout Containers */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section {
+  padding: 80px 0;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 52px 0;
+  }
+  .container {
+    padding: 0 16px;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-main);
+  border-left: 2px solid var(--border-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-green);
+}
+
+/* Screenreader / SEO utility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

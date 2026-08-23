@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "name": "Pomniter",
+  "description": "AI-powered screenshot memory search system that uses multimodal understanding and semantic vector retrieval to find saved screenshots through natural language memory queries.",
+  "url": "https://pomniter.nikunjmaheshwari.in",
+  "version": "1.0.0",
+  "author": {
+    "name": "Nikunj Maheshwari",
+    "url": "https://www.nikunjmaheshwari.in",
+    "email": "nikunjnehu@gmail.com",
+    "github": "https://github.com/markstone111"
+  },
+  "capabilities": {
+    "semantic_search": true,
+    "multimodal_vision": true,
+    "ocr_context_extraction": true,
+    "code_snippet_analysis": true,
+    "vector_retrieval": true
+  },
+  "endpoints": {
+    "documentation": "https://pomniter.nikunjmaheshwari.in/docs",
+    "llms_index": "https://pomniter.nikunjmaheshwari.in/llms.txt",
+    "llms_full": "https://pomniter.nikunjmaheshwari.in/llms-full.txt",
+    "blog": "https://pomniter.nikunjmaheshwari.in/blog",
+    "download": "https://pomniter.nikunjmaheshwari.in/download"
+  },
+  "etymology": {
+    "root": "помнить",
+    "transliteration": "pomnit",
+    "meaning": "to remember (Russian)"
+  }
+}
