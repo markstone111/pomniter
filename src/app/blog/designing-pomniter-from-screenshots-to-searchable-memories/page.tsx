@@ -193,7 +193,7 @@ export default function ArticlePage() {
                 <ExternalLink size={12} />
               </a>
               <a
-                href="https://dev.to/nikunjmaheshwari"
+                href="https://dev.to/nikunj_maheshwari"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="neo-btn neo-btn-outline"
@@ -203,7 +203,7 @@ export default function ArticlePage() {
                 <ExternalLink size={12} />
               </a>
               <a
-                href="https://www.linkedin.com/in/nikunjmaheshwari"
+                href="https://www.linkedin.com/in/nikunjm111"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="neo-btn neo-btn-yellow"

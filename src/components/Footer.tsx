@@ -293,7 +293,7 @@ export default function Footer() {
                 <GithubIcon size={16} />
               </a>
               <a
-                href="https://www.linkedin.com/in/nikunjmaheshwari"
+                href="https://www.linkedin.com/in/nikunjm111"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn Profile"
