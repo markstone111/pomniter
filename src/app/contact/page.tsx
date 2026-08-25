@@ -1,4 +1,5 @@
-import { Mail, MapPin, Github, Linkedin, ExternalLink } from 'lucide-react';
+import { Mail, MapPin, ExternalLink } from 'lucide-react';
+import { GithubIcon as Github, LinkedinIcon as Linkedin } from '@/components/Icons';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
