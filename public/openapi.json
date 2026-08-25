@@ -1,0 +1,167 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Pomniter Memory API",
+    "description": "API for ingesting screenshots and searching the multimodal semantic memory index.",
+    "version": "1.0.0",
+    "contact": {
+      "name": "Nikunj Maheshwari",
+      "email": "nikunjnehu@gmail.com",
+      "url": "https://www.nikunjmaheshwari.in"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://pomniter.nikunjmaheshwari.in/api",
+      "description": "Production Server"
+    }
+  ],
+  "paths": {
+    "/health": {
+      "get": {
+        "operationId": "checkHealth",
+        "summary": "Check API health",
+        "description": "Returns the status of the Pomniter vector database and API components.",
+        "responses": {
+          "200": {
+            "description": "API is healthy",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HealthResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "API is unhealthy",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/search": {
+      "post": {
+        "operationId": "searchMemory",
+        "summary": "Semantic Memory Search",
+        "description": "Queries the vector index using natural language to retrieve contextually matched screenshots.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful retrieval",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SearchResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "HealthResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "example": "online"
+          },
+          "version": {
+            "type": "string",
+            "example": "1.0.0"
+          }
+        }
+      },
+      "SearchRequest": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "Natural language memory query"
+          },
+          "limit": {
+            "type": "integer",
+            "description": "Maximum number of results to return",
+            "default": 10
+          }
+        },
+        "required": [
+          "query"
+        ]
+      },
+      "SearchResponse": {
+        "type": "object",
+        "properties": {
+          "results": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "score": {
+                  "type": "number"
+                },
+                "metadata": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      },
+      "ErrorResponse": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "object",
+            "properties": {
+              "code": {
+                "type": "string",
+                "example": "BAD_REQUEST"
+              },
+              "message": {
+                "type": "string",
+                "example": "Invalid query parameters provided."
+              },
+              "resolution": {
+                "type": "string",
+                "example": "Check the API specification for required parameters."
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

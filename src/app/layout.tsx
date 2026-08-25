@@ -9,6 +9,8 @@ import {
   getSoftwareAppSchema,
   getWebsiteSchema,
   getPersonSchema,
+  getServiceSchema,
+  getAggregateRatingSchema,
 } from '@/lib/schema';
 
 export const metadata: Metadata = {
@@ -95,6 +97,8 @@ export default function RootLayout({
   const softwareSchema = getSoftwareAppSchema();
   const websiteSchema = getWebsiteSchema();
   const personSchema = getPersonSchema();
+  const serviceSchema = getServiceSchema();
+  const aggregateRatingSchema = getAggregateRatingSchema();
 
   return (
     <html lang="en" suppressHydrationWarning>
@@ -145,8 +149,28 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(aggregateRatingSchema) }}
+        />
       </head>
       <body>
+        <noscript>
+          <div style={{ padding: '20px', background: '#000', color: '#fff' }}>
+            <h1>Pomniter - AI Screenshot Memory Search</h1>
+            <p>Pomniter is an AI-powered visual memory engine that uses multimodal vector embeddings to make your screenshots semantically searchable without exact keyword matching.</p>
+            <ul>
+              <li><a href="/features">Features</a></li>
+              <li><a href="/docs">Architecture Docs</a></li>
+              <li><a href="/developers">Developers</a></li>
+              <li><a href="/blog">Blog</a></li>
+            </ul>
+          </div>
+        </noscript>
         <Navbar />
         <main>{children}</main>
         <Footer />

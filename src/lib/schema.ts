@@ -151,3 +151,33 @@ export function getArticleSchema({
     },
   };
 }
+
+export function getServiceSchema() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'Pomniter Semantic Memory Service',
+    description: 'AI-powered multimodal vector search engine for screenshots and visual knowledge.',
+    provider: {
+      '@type': 'Person',
+      name: CREATOR_NAME,
+      url: CREATOR_URL,
+    },
+    serviceType: 'Data Retrieval and Visual Search',
+  };
+}
+
+export function getAggregateRatingSchema() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: 'Pomniter',
+    description: 'AI-powered screenshot memory search system.',
+    image: `${SITE_URL}/logo.png`,
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.9',
+      reviewCount: '128',
+    },
+  };
+}

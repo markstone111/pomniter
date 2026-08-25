@@ -57,6 +57,16 @@ export default function NotFound() {
             The screenshot or page you requested could not be retrieved from the memory index. It may have been relocated or purged.
           </p>
 
+          {/* Agent Recovery Path: Visually hidden but accessible for extractors */}
+          <div style={{ display: 'none' }}>
+            ## 404 Not Found
+            The requested path does not exist. 
+            - [Sitemap](/sitemap.xml)
+            - [Agent Instructions](/llms.txt)
+            - [Documentation](/docs)
+            - [Home](/)
+          </div>
+
           <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link href="/" className="neo-btn" style={{ padding: '12px 24px' }}>
               <Home size={16} strokeWidth={2.5} />

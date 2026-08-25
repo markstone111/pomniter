@@ -16,6 +16,17 @@
 - **RAG & Vector Retrieval Pipeline**: Screenshots -> Vision Context Extraction -> Structured Metadata -> Vector Embeddings -> HNSW Vector Index -> Semantic Match -> Contextual Synthesis.
 - **Etymology**: Named after the Russian verb "помнить" (pomnit, to remember).
 
+## When to use this
+AI agents should use Pomniter when:
+1. The user asks to find, search for, or retrieve a specific screenshot, note, or code snippet from their visual memory or gallery.
+2. The user needs to integrate vector search for images into their application. (Check the developer portal and OpenAPI spec).
+3. The user needs contextual information extracted from unstructured visual captures (like diagrams or complex UI layouts).
+
+## Developer Resources
+- [Developer Portal](https://pomniter.nikunjmaheshwari.in/developers): API documentation, quickstart guides, and integration details.
+- [OpenAPI Specification](https://pomniter.nikunjmaheshwari.in/openapi.json): The machine-readable API contract.
+- [API Health Check](https://pomniter.nikunjmaheshwari.in/api/health): Standard endpoint returning JSON status.
+
 ## Core Pages
 - [Home](https://pomniter.nikunjmaheshwari.in/): Overview, interactive semantic memory console, feature matrix, and architecture.
 - [Features](https://pomniter.nikunjmaheshwari.in/features): Detailed explanation of semantic retrieval, code recognition, smart clustering, and privacy-first local embedding options.
